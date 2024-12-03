@@ -1,14 +1,56 @@
-# Project
+# `🛠️ BigBuildBench`
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+<p align="center">
+<a href="https://huggingface.co/datasets/BigBuildBench/BigBuildBench"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-BigBuildBench-%23ff8811.svg"></a>
+<a href="https://github.com/pre-commit/pre-commit"><img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit" alt="pre-commit" style="max-width:100%;"></a>
+<a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json"></a>
+</p>
 
-As the maintainer of this project, please make a few updates:
+🔎 Evaluating Large Language Models on Dependency Inference
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+## 🚀 Quick Start
+
+Ensure that Docker engine is installed and running on your machine.
+
+> [!Important]
+>
+>
+> Our testing infrastructure requires [⚙️sysbox](https://github.com/nestybox/sysbox) (a Docker runtime) to be installed on your system to ensure isolation and security.
+
+```shell
+# Suggested Python version: 3.12
+pip install .
+```
+
+## ⬇️ Downloads
+
+| Datasets |
+| - |
+| [🤗 BigBuildBench](https://huggingface.co/datasets/BigBuildBench/BigBuildBench) |
+
+```shell
+python scripts/precache_repos
+```
+
+## 😎 Evaluation
+
+```shell
+python -m bigbuild.harness.run_evaluator --help
+```
+
+
+## Run Experiments with VLLM
+
+### start server
+```shell
+# nohup ./start_server [model_name] [port] &
+nohup ./start_server deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct 8000 &
+```
+### run experiments
+```shell
+# nohup ./inference [model_name] [cache_dir] [port] &
+./inference deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct .cache 8000 &
+```
 
 ## Contributing
 
