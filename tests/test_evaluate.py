@@ -3,7 +3,7 @@ import tempfile
 from pathlib import Path
 import pytest
 
-from bigbuild.utils.ci import run_test_ci
+from dibench.utils.ci import run_test_ci
 
 @pytest.mark.skip(reason="runner image not publicly available")
 def test_run_test_ci():

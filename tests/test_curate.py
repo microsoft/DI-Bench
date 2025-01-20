@@ -1,6 +1,6 @@
 from pathlib import Path
 import pytest
-from bigbuild.curate.curator import make_curator
+from dibench.curate.curator import make_curator
 
 @pytest.mark.skip(reason="local only")
 def test_builder():

@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "bigbuild"
+name = "dibench"
 version = "0.1.0"
-description = "🛠️ BigBuildBench: Benchmarking the repo-level understanding capability of your LLMs by reconstructing project build-file."
-authors = ["B3 Group <b3@BigBuildBench.com>"]
+description = "Evaluating LLM-based Code Intelligence on Dependency Inference in Repository Scope"
+authors = ["DI-Bench <i@dibench.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "bigbuild"}]
+packages = [{include = "dibench"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -19,6 +19,22 @@ tree-sitter = "0.21.3"
 tree_sitter_languages = ">=1.10.2"
 datasets = "^3.0.1"
 lxml = "^5.3.0"
+rich = "^13.9.4"
+tenacity = "^9.0.0"
+
+pytest = { version = "^8.3.3", optional = true }
+pre-commit = { version = "^3.8.0", optional = true }
+docker = { version = "^7.1.0", optional = true }
+anthropic = { version = "^0.34.2", optional = true }
+openai = { version = "^1.50.0", optional = true }
+transformers = { version = "^4.45.1", optional = true }
+google-generativeai = { version = "^0.8.2", optional = true }
+stop-sequencer = { version = "^1.2.3", optional = true }
+vllm = { version = "^0.6.2", optional = true }
+tree-sitter-c-sharp = { version = "^0.23.1", optional = true }
+tree-sitter-rust = { version = "^0.23.2", optional = true }
+tree-sitter-python = { version = "^0.23.4", optional = true }
+tree-sitter-typescript = { version = "^0.23.2", optional = true }
 
 
 [tool.poetry.group.dev.dependencies]
@@ -42,6 +58,12 @@ tree-sitter-c-sharp = "^0.23.1"
 tree-sitter-rust = "^0.23.2"
 tree-sitter-python = "^0.23.4"
 tree-sitter-typescript = "^0.23.2"
+
+[tool.poetry.extras]
+dev = ["pytest", "pre-commit"]
+eval = ["docker"]
+llm = ["anthropic", "openai", "transformers", "google-generativeai", "stop-sequencer", "vllm"]
+pattern = ["tree-sitter-c-sharp", "tree-sitter-rust", "tree-sitter-python", "tree-sitter-typescript"]
 
 [build-system]
 requires = ["poetry-core"]

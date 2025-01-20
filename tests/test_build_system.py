@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from bigbuild.utils.build_system.python import (
+from dibench.utils.buildfile.python import (
     Pip,
     Poetry,
     SetupTools,
