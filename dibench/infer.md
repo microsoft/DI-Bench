@@ -1,10 +1,20 @@
 ## 🤔 Infer Dependencies Using LLMs
 
+### Configure LLM API Key
+
+Firstly, set environment variables for LLM providers.
+```shell
+# for OpenAI
+export OPENAI_API_KEY=<your_openai_apikey>
+# for Azure
+export AZURE_OPENAI_AD_TOKEN=<your_azure_token>
+```
+
 ### Run All-In-One prompt strategy
 
 **Prepare prompts**
 ```shell
-poetry run python -m dibench.make_prompts \
+python -m dibench.make_prompts \
      --result_path results/bigbuild-prompts.jsonl \
      --dataset [dataset_path]
 ```
@@ -41,7 +51,7 @@ python -m bigbuild.buildgen \
 
 ### Run File-Iterate
 ```shell
-poetry run python -m bigbuild.inference.run_builder \
+python -m bigbuild.inference.run_builder \
     --model [model] \
     --backend  "openai" \
     # --base_url [base_url] # if you using vllm server
