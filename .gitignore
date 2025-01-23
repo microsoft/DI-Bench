@@ -167,5 +167,3 @@ logs
 *.bin
 .vscode
 poetry.lock
-
-*.diff

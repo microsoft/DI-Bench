@@ -1,0 +1,22 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index c384ee2..7c3b3ed 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -27,7 +27,10 @@ classifiers = [
+     "Topic :: Software Development :: Libraries",
+     "Topic :: Utilities",
+ ]
+-dependencies = []
++dependencies = [
++    "numpy>=1.18.0",
++    "pytools>=2021.2.9",
++]
+ 
+ [project.optional-dependencies]
+ test = [
+@@ -81,3 +84,5 @@ combine-as-imports = true
+ known-first-party = [ "pytools" ]
+ known-local-folder = [ "cgen" ]
+ lines-after-imports = 2
++
++

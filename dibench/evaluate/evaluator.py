@@ -330,16 +330,6 @@ class BuildEvaluator:
                 else:
                     print("No exec output log found, re-running")
                     self.exec_result = self._exec_eval()
-        if self.patch_eval:
-            if not self.resume or results.get("patch-exec", None) is None:
-                self.patch_exec_result = self._patch_eval()
-            else:
-                self.patch_exec_result = results["patch-exec"]
-        if self.remove_fake_eval:
-            if not self.resume or results.get("remove-fake", None) is None:
-                self.remove_fake_result = self._remove_fake_eval()
-            else:
-                self.remove_fake_result = results["remove-fake"]
         with open(self.result_file, "w") as f:
             f.write(json.dumps(self.result, indent=2))
         self._clean_workspace()
