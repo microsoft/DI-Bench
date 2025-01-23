@@ -12,6 +12,9 @@ Ensure that Docker engine is installed and running on your machine.
 ```shell
 # Suggested Python version: 3.10
 pip install ".[eval,llm,pattern]"
+
+# Used for authentication in the local CI runner to enable downloading actions from GitHub, requiring 0 permission
+export GITHUB_TOKEN=<your_github_token>
 ```
 
 ## ⬇️ Download DI-Bench Dataset
