@@ -43,5 +43,5 @@ python -m dibench.eval \
 ```
 
 ## 📃 Documentations
-- [Dataset Curation](./dibench/curate/curate.md)
-- [Infer Dependencies Using LLMs](./dibench/infer.md)
+- [Dataset Curation](./docs/curate.md)
+- [Infer Dependencies Using LLMs](./docs/infer.md)
