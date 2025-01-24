@@ -36,7 +36,7 @@ Each repository instance's data can be found in `.cache/repo-data/{language}/{in
 Evaluate the correctness of inferred dependencies by checking if the project's tests pass.
 
 ```shell
-python -m dibench.eval \
+dibench.eval \
     --result_dir [results_dir] \ # the root of generated results, e.g. tests/data/example-results
     --repo_instances_dir [repo_instances_dir] \ # extracted repo data path
     --dataset_name_or_path [regular_dataset_path/large_dataset_path] # *.jsonl

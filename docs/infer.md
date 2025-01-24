@@ -1,8 +1,8 @@
 ## 🧐 Dependency Inference
 
-### Setup LLM Backends
+we support many llm backends.
 
-#### OpenAI
+### OpenAI
 ```bash 
 export OPENAI_API_KEY=<your-api-key>
 # <path-to-repo-instances-dir> is the directory where the your repo instances are downloaded and unzipped.
@@ -11,7 +11,7 @@ dibench.depinfer --model "gpt-4o-2024-0806" \
                  --repo_instances_dir <path-to-repo-instances-dir>
 ```
 
-#### AZURE
+### AZURE
 ```bash
 export AZURE_OPENAI_AD_TOKEN=<your-ad-token>
 export AZURE_OPENAI_ENDPOINT=<your-endpoint>
@@ -21,7 +21,7 @@ dibench.depinfer --model <deplyment-id> \
                  --repo_instances_dir <path-to-repo-instances-dir>
 ```
 
-#### `openai` compatible servers(e.g. [vllm](https://github.com/vllm-project/vllm), [sglang](https://github.com/sgl-project/sglang)) 
+### `openai` compatible servers(e.g. [vllm](https://github.com/vllm-project/vllm), [sglang](https://github.com/sgl-project/sglang)) 
 ```bash
 # DeepSeek
 export OPENAI_API_KEY=<your-api-key> # https://platform.deepseek.com/api_keys
