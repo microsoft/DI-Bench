@@ -5,8 +5,8 @@ import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-from bigbuild.utils.ci import run_test_ci
-from bigbuild.utils.log import close_logger, setup_logger
+from dibench.utils.ci import run_test_ci
+from dibench.utils.log import close_logger, setup_logger
 from fire import Fire
 
 RUN_VERIFY_LOG_DIR = Path("logs/verify")

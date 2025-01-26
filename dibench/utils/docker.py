@@ -36,7 +36,7 @@ def build_container(
     logger: logging.Logger,
     name: str,
     project_path: pathlib.Path,
-    image_name: str = "ghcr.io/bigbuildbench/bigbuild-runner",
+    image_name: str = "justachillguy/dibench-runner",
 ):
     """
     Build a Docker container from an image
@@ -94,7 +94,7 @@ def container_context(
     logger: logging.Logger,
     name: str,
     project_path: pathlib.Path,
-    image_name: str = "ghcr.io/bigbuildbench/bigbuild-runner",
+    image_name: str = "justachillguy/dibench-runner",
 ):
     """
     Context manager to create a container from an image and cleanup after use

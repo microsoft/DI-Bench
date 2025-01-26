@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Tuple
 
 from alive_progress import alive_bar
-from bigbuild.curate.curator import make_curator
+from dibench.curate.curator import make_curator
 from fire import Fire
 
 

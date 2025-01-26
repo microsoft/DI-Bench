@@ -33,7 +33,7 @@ def run_test_ci(
     test_output_file: Path,
     timeout: int = 1200,
 ) -> tuple[bool, str, str]:
-    container_name = f"bigbuild-{run_name}-{str(uuid.uuid4())[:6]}"
+    container_name = f"dibench-{run_name}-{str(uuid.uuid4())[:6]}"
     client = docker.from_env(timeout=200)
     with container_context(
         client=client,

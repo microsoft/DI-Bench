@@ -8,7 +8,7 @@ from typing import Any, Dict, List
 
 import requests
 from alive_progress import alive_bar
-from bigbuild.utils.repo import clone_repo, fetch_metadata
+from dibench.utils.repo import clone_repo, fetch_metadata
 from fire import Fire
 from github import Auth, Github
 

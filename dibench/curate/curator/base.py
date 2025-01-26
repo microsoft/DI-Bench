@@ -5,9 +5,9 @@ from dataclasses import asdict, fields
 from pathlib import Path
 from typing import Any, Dict, List
 
-from bigbuild import RepoInstance
-from bigbuild.utils.llm.provider import AzureOpenaiProvider
-from bigbuild.utils.log import close_logger, setup_logger
+from dibench import RepoInstance
+from dibench.utils.provider import get_llm, BaseProvider
+from dibench.utils.log import close_logger, setup_logger
 
 from .make_prompt import make_prompt
 from .prompt import ACT_COMMAND_PROMPT, LOCATE_TEST_CI_PROMPT
@@ -49,10 +49,10 @@ class Curator:
     # internal properties
     root: Path
     logger: logging.Logger
-    client: AzureOpenaiProvider
+    client: BaseProvider
 
     def __init__(self, instance_dict: dict, root: Path, run_id: str = None):
-        self.client = AzureOpenaiProvider("gpt-4o-20240806")
+        self.client = get_llm("gpt-4o-20240806")
         self.root = root
         repo_instance_fields = {f.name for f in fields(RepoInstance)}
         filtered_data = {
